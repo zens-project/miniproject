@@ -13,6 +13,7 @@ import expenseManagementReducer from './slices/expense-management.slice';
 import expenseCategoriesReducer from './slices/expense-categories.slice';
 import productManagementReducer from './slices/product-management.slice';
 import salesManagementReducer from './slices/sales-management.slice';
+import notesReducer from './slices/notes.slice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -27,12 +28,13 @@ const rootReducer = combineReducers({
   expenseCategories: expenseCategoriesReducer,
   productManagement: productManagementReducer,
   salesManagement: salesManagementReducer,
+  notes: notesReducer,
 });
 
 const persistConfig = {
   key: 'coffee-shop-root',
   storage,
-  whitelist: ['auth', 'products', 'customers'], // Only persist these
+  whitelist: ['auth', 'products', 'customers', 'notes'], // Only persist these
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -43,6 +45,15 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+        ignoredActionsPaths: ['payload.timestamp', 'payload.revenues', 'payload.date', 'payload.createdAt', 'payload.updatedAt'],
+        ignoredPaths: [
+          'notes.recentlyDeleted.timestamp', 
+          'salesManagement.recentRevenues',
+          'productManagement.items',
+          'expenseCategories.items',
+          'aiAssistant.sessions',
+          'aiAssistant.currentSession'
+        ],
       },
     }),
 });

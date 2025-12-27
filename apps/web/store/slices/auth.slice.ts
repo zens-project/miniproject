@@ -7,6 +7,15 @@ export interface User {
   name: string;
   role: 'admin' | 'staff';
   avatar?: string;
+  phone?: string;
+  address?: string;
+  joinedDate?: string;
+  preferences?: {
+    theme: 'light' | 'dark' | 'coffee';
+    notifications: boolean;
+    emailUpdates: boolean;
+    language: 'vi' | 'en';
+  };
 }
 
 export interface AuthState {
@@ -47,6 +56,19 @@ export const register = createAsyncThunk(
     try {
       const response = await authService.register(email, password, name);
       return response;
+    } catch (error: any) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateProfile = createAsyncThunk(
+  'auth/updateProfile',
+  async (profileData: Partial<User>, { rejectWithValue }) => {
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      return profileData;
     } catch (error: any) {
       return rejectWithValue(error.message);
     }
@@ -100,6 +122,23 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
       })
       .addCase(register.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      });
+
+    // Update Profile
+    builder
+      .addCase(updateProfile.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(updateProfile.fulfilled, (state, action) => {
+        state.isLoading = false;
+        if (state.user) {
+          state.user = { ...state.user, ...action.payload };
+        }
+      })
+      .addCase(updateProfile.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
       });

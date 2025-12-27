@@ -3,14 +3,13 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { LayoutDashboard, TrendingUp, TrendingDown, ShoppingCart, Package, Users, FileText, Settings, LogOut, Coffee, Sparkles } from 'lucide-react';
+import { LayoutDashboard, TrendingUp, TrendingDown, ShoppingCart, Package, Users, FileText, Settings, LogOut, User, StickyNote, Coffee, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@workspace/ui';
 import { motion } from 'motion/react';
 import { AIChat } from './components/ai-chat';
 import LoyaltyNotificationComponent from '@/components/sales/loyalty-notification';
-import AIAssistantWidget from '@/components/ai-assistant/ai-assistant-widget';
 import { markNotificationAsRead, clearAllNotifications } from '@/store/slices/sales-management.slice';
 
 const navigation = [
@@ -19,7 +18,8 @@ const navigation = [
   { name: 'Quản lý Menu', href: '/products', icon: Package },
   { name: 'Bán hàng (POS)', href: '/sales', icon: ShoppingCart },
   { name: 'Khách hàng', href: '/customers', icon: Users },
-  { name: 'Cài đặt', href: '/settings', icon: Settings },
+  { name: 'Ghi chú', href: '/notes', icon: StickyNote },
+  { name: 'Hồ sơ', href: '/profile', icon: User },
 ];
 
 export default function ProtectedLayout({
@@ -181,9 +181,6 @@ export default function ProtectedLayout({
 
         {/* AI Chat Component */}
         <AIChat />
-
-        {/* AI Assistant Widget */}
-        <AIAssistantWidget />
       </div>
     </div>
   );

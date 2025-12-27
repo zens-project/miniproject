@@ -424,6 +424,7 @@ export default function CustomersPage() {
                 Bộ lọc
               </Button>
               <Button 
+                onClick={() => setShowLoyaltySettings(true)}
                 variant="ghost" 
                 size="sm"
                 className="bg-white/10 border border-white/20 text-white hover:bg-white/20"
@@ -462,27 +463,27 @@ export default function CustomersPage() {
             </div>
           ) : (
             <div className="divide-y divide-white/10">
-            {filteredCustomers.map((customer) => {
-              const stats = getCustomerStats(customer.id);
-              
-              return (
+              {filteredCustomers.map((customer) => {
+                const stats = getCustomerStats(customer.id);
+                
+                return (
                 <motion.div
                   key={customer.id}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className="p-6 hover:bg-white/5 transition-colors"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 flex-1">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div className="flex items-center gap-4 flex-1 min-w-0">
                       {/* Avatar */}
-                      <div className="h-12 w-12 bg-gradient-to-br from-purple-400/80 to-indigo-600/80 rounded-full flex items-center justify-center text-white font-semibold border border-white/20 backdrop-blur-sm">
+                      <div className="h-12 w-12 bg-gradient-to-br from-purple-400/80 to-indigo-600/80 rounded-full flex items-center justify-center text-white font-semibold border border-white/20 backdrop-blur-sm shrink-0">
                         {customer.name.charAt(0).toUpperCase()}
                       </div>
                       
                       {/* Customer Info */}
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-1">
-                          <h3 className="font-semibold text-white">{customer.name}</h3>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                          <h3 className="font-semibold text-white truncate">{customer.name}</h3>
                           <LoyaltyBadge 
                             loyaltyPoints={customer.loyaltyPoints}
                             totalPurchases={customer.totalPurchases}
@@ -490,44 +491,46 @@ export default function CustomersPage() {
                           />
                         </div>
                         
-                        <div className="flex items-center gap-4 text-sm text-white/70">
-                          <div className="flex items-center gap-1">
-                            <Phone className="h-3 w-3" />
-                            {customer.phone}
+                        <div className="flex flex-wrap gap-3 sm:gap-4 text-sm text-white/70">
+                          <div className="flex items-center gap-1 shrink-0">
+                            <Phone className="h-3 w-3 shrink-0" />
+                            <span className="truncate">{customer.phone}</span>
                           </div>
                           {customer.email && (
-                            <div className="flex items-center gap-1">
-                              <Mail className="h-3 w-3" />
-                              {customer.email}
+                            <div className="flex items-center gap-1 shrink-0 min-w-0">
+                              <Mail className="h-3 w-3 shrink-0" />
+                              <span className="truncate">{customer.email}</span>
                             </div>
                           )}
-                          <div className="flex items-center gap-1">
-                            <ShoppingBag className="h-3 w-3" />
-                            {stats.totalPurchases} đơn hàng
+                          <div className="flex items-center gap-1 shrink-0">
+                            <ShoppingBag className="h-3 w-3 shrink-0" />
+                            <span>{stats.totalPurchases} đơn hàng</span>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
-                            {customer.lastPurchaseDate 
-                              ? formatDate(customer.lastPurchaseDate)
-                              : 'Chưa mua hàng'
-                            }
+                          <div className="flex items-center gap-1 shrink-0">
+                            <Calendar className="h-3 w-3 shrink-0" />
+                            <span className="truncate">
+                              {customer.lastPurchaseDate 
+                                ? formatDate(customer.lastPurchaseDate)
+                                : 'Chưa mua hàng'
+                              }
+                            </span>
                           </div>
                         </div>
                       </div>
+                    </div>
                       
-                      {/* Stats */}
-                      <div className="text-right">
-                        <p className="font-semibold text-white">
-                          {formatCurrency(stats.totalSpent)}
-                        </p>
-                        <p className="text-sm text-white/70">
-                          TB: {formatCurrency(stats.avgOrderValue)}
-                        </p>
-                      </div>
+                    {/* Stats */}
+                    <div className="text-left lg:text-right shrink-0">
+                      <p className="font-semibold text-white">
+                        {formatCurrency(stats.totalSpent)}
+                      </p>
+                      <p className="text-sm text-white/70">
+                        TB: {formatCurrency(stats.avgOrderValue)}
+                      </p>
                     </div>
                     
                     {/* Actions */}
-                    <div className="flex items-center gap-2 ml-4">
+                    <div className="flex items-center gap-2 mt-4 lg:mt-0 lg:ml-4">
                       <Button
                         variant="ghost"
                         size="sm"

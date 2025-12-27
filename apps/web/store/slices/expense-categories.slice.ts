@@ -9,11 +9,11 @@ export const fetchExpenseCategories = createAsyncThunk(
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    // Convert string dates to Date objects
+    // Keep dates as ISO strings for Redux serialization
     const categories: ExpenseCategory[] = mockData.categories.map(cat => ({
       ...cat,
-      createdAt: new Date(cat.createdAt),
-      updatedAt: new Date(cat.updatedAt)
+      createdAt: cat.createdAt,
+      updatedAt: cat.updatedAt
     }));
 
     return categories.filter(cat => cat.isActive);
@@ -30,8 +30,8 @@ export const createExpenseCategory = createAsyncThunk(
       ...categoryData,
       id: `cat_${Date.now()}`,
       isActive: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     };
     
     return newCategory;
@@ -48,7 +48,7 @@ export const updateExpenseCategory = createAsyncThunk(
       id,
       updates: {
         ...updates,
-        updatedAt: new Date()
+        updatedAt: new Date().toISOString()
       }
     };
   }
@@ -70,7 +70,7 @@ export const toggleCategoryStatus = createAsyncThunk(
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 300));
     
-    return { id, isActive, updatedAt: new Date() };
+    return { id, isActive, updatedAt: new Date().toISOString() };
   }
 );
 

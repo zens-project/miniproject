@@ -240,23 +240,6 @@ export default function AIChatInterface({
                   Tôi có thể hỗ trợ bạn về quy trình, chính sách và cách sử dụng hệ thống Coffee Shop.
                 </p>
                 
-                {showSuggestions && (
-                  <div className="space-y-2">
-                    <p className="text-white/80 text-sm font-medium">Câu hỏi gợi ý:</p>
-                    {suggestions.slice(0, 4).map((suggestion, index) => (
-                      <motion.button
-                        key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        onClick={() => handleSuggestionClick(suggestion)}
-                        className="block w-full p-2 text-left text-sm text-white/70 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-all"
-                      >
-                        {suggestion}
-                      </motion.button>
-                    ))}
-                  </div>
-                )}
               </div>
             ) : (
               <>

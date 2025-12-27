@@ -5,8 +5,8 @@ export interface ExpenseCategory {
   icon: string;
   color: string;
   isActive: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface ExpenseCategoryFormData {
