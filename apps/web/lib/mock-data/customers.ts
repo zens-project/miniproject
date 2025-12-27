@@ -1,0 +1,52 @@
+import type { Customer } from '@/store/slices/customers.slice';
+
+export const mockCustomers: Customer[] = [
+  {
+    id: 'cust-1',
+    name: 'Nguyễn Văn A',
+    phone: '0901234567',
+    email: 'nguyenvana@email.com',
+    loyaltyPoints: 150,
+    totalSpent: 1500000,
+    visitCount: 25,
+    createdAt: '2024-01-15T10:00:00Z',
+  },
+  {
+    id: 'cust-2',
+    name: 'Trần Thị B',
+    phone: '0912345678',
+    email: 'tranthib@email.com',
+    loyaltyPoints: 80,
+    totalSpent: 800000,
+    visitCount: 15,
+    createdAt: '2024-02-20T14:30:00Z',
+  },
+  {
+    id: 'cust-3',
+    name: 'Lê Văn C',
+    phone: '0923456789',
+    loyaltyPoints: 200,
+    totalSpent: 2000000,
+    visitCount: 40,
+    createdAt: '2023-12-10T09:15:00Z',
+  },
+  {
+    id: 'cust-4',
+    name: 'Phạm Thị D',
+    phone: '0934567890',
+    email: 'phamthid@email.com',
+    loyaltyPoints: 50,
+    totalSpent: 500000,
+    visitCount: 10,
+    createdAt: '2024-03-05T16:45:00Z',
+  },
+  {
+    id: 'cust-5',
+    name: 'Hoàng Văn E',
+    phone: '0945678901',
+    loyaltyPoints: 120,
+    totalSpent: 1200000,
+    visitCount: 20,
+    createdAt: '2024-01-25T11:20:00Z',
+  },
+];
