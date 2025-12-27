@@ -99,7 +99,7 @@ export default function CustomerSelector({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl shadow-xl"
+              className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl border border-amber-200/30 bg-gradient-to-br from-amber-900/95 via-orange-900/95 to-stone-900/95 backdrop-blur-xl shadow-2xl"
             >
               <div className="p-4">
                 {/* Search */}
@@ -110,7 +110,7 @@ export default function CustomerSelector({
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Tìm kiếm khách hàng..."
-                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-white/10 border border-white/30 text-white placeholder-white/50 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/50 transition-all"
+                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-black/20 border border-amber-300/30 text-white placeholder-white/60 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/50 transition-all"
                   />
                 </div>
 
@@ -119,16 +119,16 @@ export default function CustomerSelector({
                   onClick={() => handleSelectCustomer()}
                   className={`w-full p-3 rounded-lg text-left transition-all mb-2 ${
                     isGuestCustomer
-                      ? 'bg-amber-500/20 border border-amber-400/30 text-amber-200'
-                      : 'bg-white/5 hover:bg-white/10 text-white border border-transparent'
+                      ? 'bg-amber-500/30 border border-amber-400/50 text-white shadow-md'
+                      : 'bg-black/20 hover:bg-black/30 text-white border border-white/10 hover:border-amber-400/30'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 rounded-full bg-gray-500/20 flex items-center justify-center">
-                        <User className="h-4 w-4 text-gray-400" />
+                      <div className="h-8 w-8 rounded-full bg-gray-600/40 flex items-center justify-center border border-gray-500/30">
+                        <User className="h-4 w-4 text-gray-300" />
                       </div>
                       <div>
                         <p className="font-medium">Khách lẻ</p>
@@ -155,16 +155,16 @@ export default function CustomerSelector({
                         onClick={() => handleSelectCustomer(customer)}
                         className={`w-full p-3 rounded-lg text-left transition-all ${
                           selectedCustomerId === customer.id
-                            ? 'bg-blue-500/20 border border-blue-400/30 text-blue-200'
-                            : 'bg-white/5 hover:bg-white/10 text-white border border-transparent'
+                            ? 'bg-blue-500/30 border border-blue-400/50 text-white shadow-md'
+                            : 'bg-black/20 hover:bg-black/30 text-white border border-white/10 hover:border-blue-400/30'
                         }`}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <div className="h-8 w-8 rounded-full bg-blue-500/20 flex items-center justify-center">
-                              <User className="h-4 w-4 text-blue-400" />
+                            <div className="h-8 w-8 rounded-full bg-blue-500/40 flex items-center justify-center border border-blue-400/30">
+                              <User className="h-4 w-4 text-blue-300" />
                             </div>
                             <div className="flex-1">
                               <p className="font-medium">{customer.name}</p>
@@ -189,7 +189,7 @@ export default function CustomerSelector({
                 </div>
 
                 {/* Create New Customer */}
-                <div className="border-t border-white/10 pt-4 mt-4">
+                <div className="border-t border-amber-300/20 pt-4 mt-4">
                   <Button
                     onClick={() => {
                       setIsCreateDialogOpen(true);
