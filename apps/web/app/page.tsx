@@ -1,8 +1,9 @@
 'use client';
 
 import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@workspace/ui';
-import { Coffee, TrendingUp, Users, ShoppingCart, FileText, Settings } from 'lucide-react';
+import { Coffee, TrendingUp, Users, ShoppingCart, FileText, Settings, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
 const features = [
   {
@@ -45,7 +46,7 @@ const features = [
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
       {/* Hero Section */}
       <section className="px-4 py-16 md:px-8 md:py-24">
         <motion.div
@@ -55,21 +56,41 @@ export default function HomePage() {
           className="mx-auto max-w-4xl text-center"
         >
           <div className="mb-6 flex justify-center">
-            <div className="rounded-full bg-[var(--color-primary-100)] p-4">
-              <Coffee className="h-16 w-16 text-[var(--color-primary-700)]" />
-            </div>
+            <motion.div 
+              className="relative rounded-full bg-gradient-to-br from-amber-400 to-orange-600 p-6 shadow-2xl"
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Coffee className="h-16 w-16 text-white" strokeWidth={2.5} />
+              <motion.div
+                className="absolute -right-2 -top-2"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 10, 0]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <Sparkles className="h-8 w-8 text-yellow-300" fill="currentColor" />
+              </motion.div>
+            </motion.div>
           </div>
-          <h1 className="mb-4 text-4xl font-bold text-[var(--color-neutral-900)] md:text-6xl">
+          <h1 className="mb-4 text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent md:text-6xl">
             Coffee Shop Management
           </h1>
-          <p className="mb-8 text-lg text-[var(--color-neutral-600)] md:text-xl">
+          <p className="mb-8 text-lg text-amber-900/80 md:text-xl">
             Hệ thống quản lý coffee shop hiện đại, tối ưu cho mobile
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" className="text-base">
-              Đăng nhập
-            </Button>
-            <Button size="lg" variant="secondary" className="text-base">
+            <Link href="/login">
+              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-base shadow-lg">
+                Đăng nhập
+              </Button>
+            </Link>
+            <Button size="lg" variant="secondary" className="w-full sm:w-auto border-2 border-amber-500 text-amber-700 hover:bg-amber-50 text-base">
               Tìm hiểu thêm
             </Button>
           </div>
@@ -85,10 +106,10 @@ export default function HomePage() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mb-12 text-center"
           >
-            <h2 className="mb-4 text-3xl font-bold text-[var(--color-neutral-900)]">
+            <h2 className="mb-4 text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
               Tính năng nổi bật
             </h2>
-            <p className="text-lg text-[var(--color-neutral-600)]">
+            <p className="text-lg text-amber-900/70">
               Mọi thứ bạn cần để quản lý coffee shop hiệu quả
             </p>
           </motion.div>
@@ -101,7 +122,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index, duration: 0.5 }}
               >
-                <Card className="h-full transition-all hover:shadow-lg hover:-translate-y-1">
+                <Card className="h-full transition-all hover:shadow-xl hover:-translate-y-2 border-2 border-amber-100 hover:border-amber-300">
                   <CardHeader>
                     <div className={`mb-4 inline-flex rounded-lg p-3 ${feature.color}`}>
                       <feature.icon className="h-6 w-6" />
@@ -124,20 +145,20 @@ export default function HomePage() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Card className="bg-gradient-to-r from-[var(--color-primary-700)] to-[var(--color-primary-900)] text-white">
+            <Card className="bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-2xl border-none">
               <CardContent className="p-8 md:p-12">
                 <div className="grid gap-8 md:grid-cols-3">
                   <div className="text-center">
                     <div className="mb-2 text-4xl font-bold">100%</div>
-                    <div className="text-blue-100">Mobile Responsive</div>
+                    <div className="text-amber-100">Mobile Responsive</div>
                   </div>
                   <div className="text-center">
                     <div className="mb-2 text-4xl font-bold">PWA</div>
-                    <div className="text-blue-100">Cài đặt như app</div>
+                    <div className="text-amber-100">Cài đặt như app</div>
                   </div>
                   <div className="text-center">
                     <div className="mb-2 text-4xl font-bold">Offline</div>
-                    <div className="text-blue-100">Hoạt động offline</div>
+                    <div className="text-amber-100">Hoạt động offline</div>
                   </div>
                 </div>
               </CardContent>
@@ -147,8 +168,8 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--color-neutral-200)] px-4 py-8">
-        <div className="mx-auto max-w-6xl text-center text-sm text-[var(--color-neutral-600)]">
+      <footer className="border-t border-amber-200 bg-amber-50/50 px-4 py-8">
+        <div className="mx-auto max-w-6xl text-center text-sm text-amber-900/60">
           <p>© 2024 Coffee Shop Management. All rights reserved.</p>
         </div>
       </footer>

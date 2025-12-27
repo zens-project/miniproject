@@ -80,9 +80,9 @@ export interface LoyaltyReward {
   rewardType: 'free_drink' | 'discount' | 'bonus_points';
   description: string;
   isUsed: boolean;
-  earnedAt: Date;
-  usedAt?: Date;
-  expiresAt?: Date;
+  earnedAt: string; // ISO string for Redux serialization
+  usedAt?: string; // ISO string for Redux serialization
+  expiresAt?: string; // ISO string for Redux serialization
 }
 
 export interface LoyaltyNotification {
@@ -92,7 +92,7 @@ export interface LoyaltyNotification {
   message: string;
   type: 'reward_earned' | 'points_added' | 'milestone_reached';
   isRead: boolean;
-  createdAt: Date;
+  createdAt: string; // ISO string for Redux serialization
 }
 
 // Loyalty Program Constants

@@ -9,11 +9,11 @@ export const fetchProducts = createAsyncThunk(
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    // Convert string dates to Date objects
+    // Keep dates as ISO strings for Redux serialization
     let products: Product[] = mockData.products.map(product => ({
       ...product,
-      createdAt: new Date(product.createdAt),
-      updatedAt: new Date(product.updatedAt),
+      createdAt: String(product.createdAt),
+      updatedAt: String(product.updatedAt),
       category: product.category as ProductCategory
     }));
 
@@ -73,8 +73,8 @@ export const createProduct = createAsyncThunk(
     const newProduct: Product = {
       ...productData,
       id: `prod_${Date.now()}`,
-      createdAt: new Date(),
-      updatedAt: new Date()
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     };
 
     return newProduct;
@@ -91,7 +91,7 @@ export const updateProduct = createAsyncThunk(
       id,
       updates: {
         ...updates,
-        updatedAt: new Date()
+        updatedAt: new Date().toISOString()
       }
     };
   }
@@ -113,7 +113,7 @@ export const toggleProductAvailability = createAsyncThunk(
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    return { id, isAvailable, updatedAt: new Date() };
+    return { id, isAvailable, updatedAt: new Date().toISOString() };
   }
 );
 

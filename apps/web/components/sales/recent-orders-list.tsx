@@ -26,14 +26,16 @@ export default function RecentOrdersList({
     }).format(amount);
   };
 
-  const formatTime = (date: Date) => {
+  const formatTime = (dateString: string) => {
+    const date = new Date(dateString);
     return date.toLocaleTimeString('vi-VN', { 
       hour: '2-digit', 
       minute: '2-digit' 
     });
   };
 
-  const formatDate = (date: Date) => {
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
     const today = new Date();
     const yesterday = new Date(today);
     yesterday.setDate(yesterday.getDate() - 1);
@@ -88,7 +90,7 @@ export default function RecentOrdersList({
 
   // Group orders by date
   const groupedOrders = orders.reduce((groups, order) => {
-    const dateKey = order.createdAt.toDateString();
+    const dateKey = new Date(order.createdAt).toDateString();
     if (!groups[dateKey]) {
       groups[dateKey] = [];
     }

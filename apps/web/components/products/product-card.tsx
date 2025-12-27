@@ -169,7 +169,7 @@ export default function ProductCard({
         <div className="mt-3 pt-3 border-t border-white/10">
           <div className="flex items-center justify-between text-xs text-white/60">
             <span>ID: {product.id}</span>
-            <span>Cập nhật: {product.updatedAt.toLocaleDateString('vi-VN')}</span>
+            <span>Cập nhật: {new Date(product.updatedAt).toLocaleDateString('vi-VN')}</span>
           </div>
         </div>
       </div>

@@ -9,7 +9,6 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { login, clearError } from '@/store/slices/auth.slice';
 import { toast } from 'sonner';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -37,18 +36,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden p-4">
-      {/* Background Image with Overlay */}
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden p-4 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+      {/* Background Pattern Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/coffee-bg.jpeg"
-          alt="Coffee Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-linear-to-br from-amber-900/80 via-stone-900/70 to-neutral-900/85" />
-        <div className="absolute inset-0 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-400/10 via-orange-400/5 to-yellow-400/10" />
       </div>
 
       {/* Floating Coffee Beans Animation */}
@@ -114,10 +105,10 @@ export default function LoginPage() {
               </motion.div>
             </motion.div>
           </div>
-          <h1 className="mb-3 text-4xl font-bold text-white drop-shadow-lg">
+          <h1 className="mb-3 text-4xl font-bold bg-gradient-to-r from-amber-700 to-orange-700 bg-clip-text text-transparent">
             Đăng nhập
           </h1>
-          <p className="text-lg text-amber-100/90">
+          <p className="text-lg text-amber-900/80">
             Quản lý coffee shop của bạn
           </p>
         </motion.div>
@@ -127,43 +118,43 @@ export default function LoginPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="rounded-2xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-xl"
+          className="rounded-2xl border border-amber-200 bg-white/90 p-8 shadow-2xl backdrop-blur-xl"
         >
           <div className="mb-6">
-            <h2 className="text-2xl font-semibold text-white">Chào mừng trở lại</h2>
-            <p className="mt-1 text-amber-100/80">
+            <h2 className="text-2xl font-semibold text-amber-900">Chào mừng trở lại</h2>
+            <p className="mt-1 text-amber-700">
               Đăng nhập để tiếp tục sử dụng hệ thống
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-white">Email</Label>
+              <Label htmlFor="email" className="text-amber-900 font-medium">Email</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-amber-300" />
+                <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-amber-600" />
                 <Input
                   id="email"
                   type="email"
                   placeholder="admin@coffee.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="border-white/30 bg-white/20 pl-10 text-white placeholder:text-white/50 focus:border-amber-400 focus:ring-amber-400/50"
+                  className="border-amber-300 bg-white pl-10 text-amber-900 placeholder:text-amber-400 focus:border-amber-500 focus:ring-amber-500/50"
                   disabled={isLoading}
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-white">Mật khẩu</Label>
+              <Label htmlFor="password" className="text-amber-900 font-medium">Mật khẩu</Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-amber-300" />
+                <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-amber-600" />
                 <Input
                   id="password"
                   type="password"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border-white/30 bg-white/20 pl-10 text-white placeholder:text-white/50 focus:border-amber-400 focus:ring-amber-400/50"
+                  className="border-amber-300 bg-white pl-10 text-amber-900 placeholder:text-amber-400 focus:border-amber-500 focus:ring-amber-500/50"
                   disabled={isLoading}
                 />
               </div>
@@ -200,23 +191,13 @@ export default function LoginPage() {
               )}
             </Button>
 
-            <div className="text-center text-sm text-white/90">
-              Chưa có tài khoản?{' '}
-              <Link
-                href="/register"
-                className="font-semibold text-amber-300 hover:text-amber-200 hover:underline"
-              >
-                Đăng ký ngay
-              </Link>
-            </div>
-
             <motion.div 
-              className="rounded-lg border border-amber-400/30 bg-amber-500/20 p-3 text-sm text-amber-100"
+              className="rounded-lg border border-amber-300 bg-amber-100 p-3 text-sm text-amber-900"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <strong className="text-amber-200">Demo:</strong> admin@coffee.com / admin123
+              <strong className="text-amber-800">Demo:</strong> admin@coffee.com / admin123
             </motion.div>
           </form>
         </motion.div>

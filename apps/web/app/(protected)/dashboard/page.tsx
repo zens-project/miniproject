@@ -39,8 +39,8 @@ export default function StatisticsPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/80 via-stone-900/70 to-neutral-900/85" />
-        <div className="absolute inset-0 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/60 via-stone-800/50 to-neutral-800/65" />
+        <div className="absolute inset-0 backdrop-blur-[1.5px]" />
       </div>
 
       {/* Floating Coffee Beans Animation */}

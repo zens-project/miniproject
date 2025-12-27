@@ -9,7 +9,6 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { register } from '@/store/slices/auth.slice';
 import { toast } from 'sonner';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -49,18 +48,10 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden p-4">
-      {/* Background Image with Overlay */}
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden p-4 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+      {/* Background Pattern Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/coffee-bg.jpeg"
-          alt="Coffee Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-linear-to-br from-amber-900/80 via-stone-900/70 to-neutral-900/85" />
-        <div className="absolute inset-0 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-400/10 via-orange-400/5 to-yellow-400/10" />
       </div>
 
       {/* Floating Coffee Steam Animation */}

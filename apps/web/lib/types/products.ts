@@ -6,8 +6,8 @@ export interface Product {
   category: ProductCategory;
   imageUrl?: string;
   isAvailable: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string; // ISO string for Redux serialization
+  updatedAt: string; // ISO string for Redux serialization
 }
 
 export enum ProductCategory {

@@ -10,11 +10,11 @@ export const fetchRecentRevenues = createAsyncThunk(
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    // Keep dates as ISO strings for Redux serialization
+    // Explicitly ensure dates are strings for Redux serialization
     const revenues: RevenueEntry[] = mockSalesData.revenueEntries.map(revenue => ({
       ...revenue,
-      createdAt: revenue.createdAt,
-      updatedAt: revenue.updatedAt
+      createdAt: String(revenue.createdAt),
+      updatedAt: String(revenue.updatedAt)
     }));
 
     return revenues.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
@@ -27,12 +27,12 @@ export const fetchCustomers = createAsyncThunk(
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 300));
     
-    // Keep dates as ISO strings for Redux serialization
+    // Explicitly ensure dates are strings for Redux serialization
     const customers: Customer[] = mockSalesData.customers.map(customer => ({
       ...customer,
-      lastPurchaseDate: customer.lastPurchaseDate || undefined,
-      createdAt: customer.createdAt,
-      updatedAt: customer.updatedAt
+      lastPurchaseDate: customer.lastPurchaseDate ? String(customer.lastPurchaseDate) : undefined,
+      createdAt: String(customer.createdAt),
+      updatedAt: String(customer.updatedAt)
     }));
 
     return customers;
@@ -98,8 +98,8 @@ export const completeOrder = createAsyncThunk(
       customerName: orderData.customerName || 'Khách lẻ',
       items: orderData.items,
       total: orderData.total,
-      createdAt: new Date(),
-      updatedAt: new Date()
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     };
 
     // Handle loyalty points for registered customers
@@ -126,8 +126,8 @@ export const completeOrder = createAsyncThunk(
             rewardType: 'free_drink',
             description: 'Ly cà phê miễn phí - Chúc mừng bạn đã tích đủ 10 điểm!',
             isUsed: false,
-            earnedAt: new Date(),
-            expiresAt: new Date(Date.now() + LOYALTY_CONFIG.REWARD_EXPIRY_DAYS * 24 * 60 * 60 * 1000)
+            earnedAt: new Date().toISOString(),
+            expiresAt: new Date(Date.now() + LOYALTY_CONFIG.REWARD_EXPIRY_DAYS * 24 * 60 * 60 * 1000).toISOString()
           };
 
           // Create notification
@@ -138,7 +138,7 @@ export const completeOrder = createAsyncThunk(
             message: `🎉 Chúc mừng ${customer.name}! Bạn đã nhận được 1 ly cà phê miễn phí khi tích đủ 10 điểm!`,
             type: 'reward_earned',
             isRead: false,
-            createdAt: new Date()
+            createdAt: new Date().toISOString()
           };
         } else {
           // Regular points notification
@@ -149,7 +149,7 @@ export const completeOrder = createAsyncThunk(
             message: `${customer.name} đã nhận +1 điểm! Tổng: ${newPoints}/${LOYALTY_CONFIG.POINTS_FOR_FREE_DRINK} điểm`,
             type: 'points_added',
             isRead: false,
-            createdAt: new Date()
+            createdAt: new Date().toISOString()
           };
         }
       }
@@ -174,7 +174,7 @@ export const updateRevenueEntry = createAsyncThunk(
       id,
       updates: {
         ...updates,
-        updatedAt: new Date()
+        updatedAt: new Date().toISOString()
       }
     };
   }
@@ -313,7 +313,7 @@ const salesManagementSlice = createSlice({
       const reward = state.loyaltyRewards.find(r => r.id === action.payload);
       if (reward) {
         reward.isUsed = true;
-        reward.usedAt = new Date();
+        reward.usedAt = new Date().toISOString();
       }
     },
 
@@ -409,8 +409,8 @@ const salesManagementSlice = createSlice({
           if (customerIndex !== -1) {
             state.customers[customerIndex].loyaltyPoints += LOYALTY_CONFIG.POINTS_PER_PURCHASE;
             state.customers[customerIndex].totalPurchases += 1;
-            state.customers[customerIndex].lastPurchaseDate = new Date();
-            state.customers[customerIndex].updatedAt = new Date();
+            state.customers[customerIndex].lastPurchaseDate = new Date().toISOString();
+            state.customers[customerIndex].updatedAt = new Date().toISOString();
           }
         }
         
