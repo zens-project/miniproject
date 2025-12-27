@@ -1,0 +1,84 @@
+{
+  "categories": [
+    {
+      "id": "cat_001",
+      "name": "Nguyên liệu",
+      "description": "Chi phí mua cà phê, sữa, đường và các nguyên liệu pha chế",
+      "icon": "coffee",
+      "color": "amber",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "cat_002",
+      "name": "Thuê mặt bằng",
+      "description": "Chi phí thuê cửa hàng, kho bãi và các cơ sở vật chất",
+      "icon": "building",
+      "color": "blue",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "cat_003",
+      "name": "Điện nước",
+      "description": "Chi phí điện, nước, internet và các tiện ích khác",
+      "icon": "zap",
+      "color": "yellow",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "cat_004",
+      "name": "Lương nhân viên",
+      "description": "Lương, thưởng và các khoản phúc lợi cho nhân viên",
+      "icon": "users",
+      "color": "green",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "cat_005",
+      "name": "Marketing",
+      "description": "Chi phí quảng cáo, khuyến mãi và các hoạt động marketing",
+      "icon": "megaphone",
+      "color": "pink",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "cat_006",
+      "name": "Bảo trì thiết bị",
+      "description": "Chi phí sửa chữa và bảo trì máy móc, thiết bị",
+      "icon": "wrench",
+      "color": "orange",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "cat_007",
+      "name": "Văn phòng phẩm",
+      "description": "Chi phí mua sắm văn phòng phẩm, đồ dùng cửa hàng",
+      "icon": "book",
+      "color": "indigo",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "cat_008",
+      "name": "Khác",
+      "description": "Các chi phí khác không thuộc danh mục trên",
+      "icon": "more-horizontal",
+      "color": "gray",
+      "isActive": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    }
+  ]
+}

@@ -2,20 +2,23 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAppSelector } from '@/store/hooks';
-import { LayoutDashboard, ShoppingCart, Package, Users, FileText, Settings, LogOut } from 'lucide-react';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { LayoutDashboard, TrendingUp, TrendingDown, ShoppingCart, Package, Users, FileText, Settings, LogOut } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@workspace/ui';
 import { motion } from 'motion/react';
 import { AIChat } from './components/ai-chat';
+import LoyaltyNotificationComponent from '@/components/sales/loyalty-notification';
+import AIAssistantWidget from '@/components/ai-assistant/ai-assistant-widget';
+import { markNotificationAsRead, clearAllNotifications } from '@/store/slices/sales-management.slice';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Bán hàng', href: '/sales', icon: ShoppingCart },
-  { name: 'Sản phẩm', href: '/products', icon: Package },
+  { name: 'Chi tiêu', href: '/expenses', icon: TrendingDown },
+  { name: 'Quản lý Menu', href: '/products', icon: Package },
+  { name: 'Bán hàng (POS)', href: '/sales', icon: ShoppingCart },
   { name: 'Khách hàng', href: '/customers', icon: Users },
-  { name: 'Chi phí', href: '/expenses', icon: FileText },
   { name: 'Cài đặt', href: '/settings', icon: Settings },
 ];
 
@@ -26,7 +29,9 @@ export default function ProtectedLayout({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const dispatch = useAppDispatch();
   const { isAuthenticated, user } = useAppSelector((state) => state.auth);
+  const { loyaltyNotifications } = useAppSelector((state) => state.salesManagement);
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -37,6 +42,19 @@ export default function ProtectedLayout({
   if (!isAuthenticated) {
     return null;
   }
+
+  const handleLogout = () => {
+    // TODO: Implement logout logic
+    router.push('/login');
+  };
+
+  const handleMarkNotificationAsRead = (notificationId: string) => {
+    dispatch(markNotificationAsRead(notificationId));
+  };
+
+  const handleClearAllNotifications = () => {
+    dispatch(clearAllNotifications());
+  };
 
   return (
     <div className="flex h-screen bg-[var(--color-neutral-50)]">
@@ -108,8 +126,15 @@ export default function ProtectedLayout({
           <h1 className="text-lg font-bold text-[var(--color-primary-700)]">
             Coffee Shop
           </h1>
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)]">
-            {user?.name.charAt(0).toUpperCase()}
+          <div className="flex items-center gap-3">
+            <LoyaltyNotificationComponent
+              notifications={loyaltyNotifications}
+              onMarkAsRead={handleMarkNotificationAsRead}
+              onClearAll={handleClearAllNotifications}
+            />
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)]">
+              {user?.name.charAt(0).toUpperCase()}
+            </div>
           </div>
         </header>
 
@@ -144,10 +169,13 @@ export default function ProtectedLayout({
             );
           })}
         </nav>
-      </div>
 
-      {/* AI Chat Widget */}
-      <AIChat />
+        {/* AI Chat Component */}
+        <AIChat />
+
+        {/* AI Assistant Widget */}
+        <AIAssistantWidget />
+      </div>
     </div>
   );
 }

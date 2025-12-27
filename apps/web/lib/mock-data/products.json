@@ -1,0 +1,202 @@
+{
+  "products": [
+    {
+      "id": "prod_001",
+      "name": "Espresso",
+      "description": "Cà phê espresso đậm đà, được pha từ hạt cà phê Arabica cao cấp",
+      "price": 35000,
+      "category": "coffee",
+      "imageUrl": "/images/products/espresso.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_002",
+      "name": "Cappuccino",
+      "description": "Cà phê cappuccino với lớp foam sữa mịn màng và hương vị thơm ngon",
+      "price": 45000,
+      "category": "coffee",
+      "imageUrl": "/images/products/cappuccino.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_003",
+      "name": "Latte",
+      "description": "Cà phê latte với sữa tươi, vị ngọt dịu và thơm mát",
+      "price": 50000,
+      "category": "coffee",
+      "imageUrl": "/images/products/latte.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_004",
+      "name": "Americano",
+      "description": "Cà phê americano đen đậm đà, phù hợp cho những ai yêu thích vị đắng",
+      "price": 40000,
+      "category": "coffee",
+      "imageUrl": "/images/products/americano.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_005",
+      "name": "Mocha",
+      "description": "Cà phê mocha với chocolate, vị ngọt đậm đà và hấp dẫn",
+      "price": 55000,
+      "category": "coffee",
+      "imageUrl": "/images/products/mocha.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_006",
+      "name": "Trà Xanh",
+      "description": "Trà xanh tươi mát, thanh nhiệt và tốt cho sức khỏe",
+      "price": 30000,
+      "category": "tea",
+      "imageUrl": "/images/products/green-tea.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_007",
+      "name": "Trà Đào",
+      "description": "Trà đào ngọt mát với hương vị trái cây tự nhiên",
+      "price": 35000,
+      "category": "tea",
+      "imageUrl": "/images/products/peach-tea.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_008",
+      "name": "Trà Sữa",
+      "description": "Trà sữa thơm ngon với trân châu dai giòn",
+      "price": 40000,
+      "category": "tea",
+      "imageUrl": "/images/products/milk-tea.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_009",
+      "name": "Bánh Croissant",
+      "description": "Bánh croissant bơ thơm giòn, ăn kèm cà phê rất ngon",
+      "price": 25000,
+      "category": "dessert",
+      "imageUrl": "/images/products/croissant.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_010",
+      "name": "Bánh Tiramisu",
+      "description": "Bánh tiramisu Ý với mascarpone và cà phê espresso",
+      "price": 65000,
+      "category": "dessert",
+      "imageUrl": "/images/products/tiramisu.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_011",
+      "name": "Cheesecake",
+      "description": "Bánh cheesecake kem mịn với lớp bánh giòn",
+      "price": 55000,
+      "category": "dessert",
+      "imageUrl": "/images/products/cheesecake.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_012",
+      "name": "Muffin Chocolate",
+      "description": "Bánh muffin chocolate chip thơm ngon và mềm mại",
+      "price": 30000,
+      "category": "dessert",
+      "imageUrl": "/images/products/chocolate-muffin.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_013",
+      "name": "Sandwich Gà",
+      "description": "Sandwich gà nướng với rau xanh tươi và sốt mayonnaise",
+      "price": 45000,
+      "category": "snack",
+      "imageUrl": "/images/products/chicken-sandwich.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_014",
+      "name": "Bánh Mì Thịt",
+      "description": "Bánh mì thịt nướng truyền thống với rau củ tươi ngon",
+      "price": 35000,
+      "category": "snack",
+      "imageUrl": "/images/products/banh-mi.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_015",
+      "name": "Salad Trái Cây",
+      "description": "Salad trái cây tươi mát với sốt yogurt",
+      "price": 40000,
+      "category": "snack",
+      "imageUrl": "/images/products/fruit-salad.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_016",
+      "name": "Nước Cam Tươi",
+      "description": "Nước cam tươi vắt 100% không đường",
+      "price": 25000,
+      "category": "other",
+      "imageUrl": "/images/products/orange-juice.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": "prod_017",
+      "name": "Smoothie Xoài",
+      "description": "Smoothie xoài tươi với sữa chua và đá xay",
+      "price": 35000,
+      "category": "other",
+      "imageUrl": "/images/products/mango-smoothie.jpg",
+      "isAvailable": false,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-15T00:00:00Z"
+    },
+    {
+      "id": "prod_018",
+      "name": "Nước Ép Dưa Hấu",
+      "description": "Nước ép dưa hấu tươi mát, giải khát tuyệt vời",
+      "price": 30000,
+      "category": "other",
+      "imageUrl": "/images/products/watermelon-juice.jpg",
+      "isAvailable": true,
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-01T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "expenses": [
+    {
+      "id": "exp_001",
+      "date": "2024-12-01T07:00:00Z",
+      "amount": 2500000,
+      "category": "cat_001",
+      "description": "Mua cà phê hạt Arabica cao cấp từ Đà Lạt",
+      "createdAt": "2024-12-01T07:00:00Z",
+      "updatedAt": "2024-12-01T07:00:00Z"
+    },
+    {
+      "id": "exp_002",
+      "date": "2024-12-01T09:00:00Z",
+      "amount": 500000,
+      "category": "cat_003",
+      "description": "Tiền điện tháng 12/2024",
+      "createdAt": "2024-12-01T09:00:00Z",
+      "updatedAt": "2024-12-01T09:00:00Z"
+    },
+    {
+      "id": "exp_003",
+      "date": "2024-12-02T08:30:00Z",
+      "amount": 800000,
+      "category": "cat_001",
+      "description": "Sữa tươi, đường và nguyên liệu pha chế",
+      "createdAt": "2024-12-02T08:30:00Z",
+      "updatedAt": "2024-12-02T08:30:00Z"
+    },
+    {
+      "id": "exp_004",
+      "date": "2024-12-02T10:00:00Z",
+      "amount": 1200000,
+      "category": "cat_004",
+      "description": "Lương nhân viên part-time tuần 1",
+      "createdAt": "2024-12-02T10:00:00Z",
+      "updatedAt": "2024-12-02T10:00:00Z"
+    },
+    {
+      "id": "exp_005",
+      "date": "2024-12-03T07:30:00Z",
+      "amount": 300000,
+      "category": "cat_005",
+      "description": "Quảng cáo Facebook Ads tháng 12",
+      "createdAt": "2024-12-03T07:30:00Z",
+      "updatedAt": "2024-12-03T07:30:00Z"
+    },
+    {
+      "id": "exp_006",
+      "date": "2024-12-03T11:00:00Z",
+      "amount": 450000,
+      "category": "cat_006",
+      "description": "Sửa chữa máy pha cà phê espresso",
+      "createdAt": "2024-12-03T11:00:00Z",
+      "updatedAt": "2024-12-03T11:00:00Z"
+    },
+    {
+      "id": "exp_007",
+      "date": "2024-12-04T08:00:00Z",
+      "amount": 600000,
+      "category": "cat_001",
+      "description": "Bánh ngọt, croissant và snack",
+      "createdAt": "2024-12-04T08:00:00Z",
+      "updatedAt": "2024-12-04T08:00:00Z"
+    },
+    {
+      "id": "exp_008",
+      "date": "2024-12-04T14:00:00Z",
+      "amount": 8000000,
+      "category": "cat_002",
+      "description": "Tiền thuê mặt bằng tháng 12/2024",
+      "createdAt": "2024-12-04T14:00:00Z",
+      "updatedAt": "2024-12-04T14:00:00Z"
+    },
+    {
+      "id": "exp_009",
+      "date": "2024-12-05T09:00:00Z",
+      "amount": 350000,
+      "category": "cat_003",
+      "description": "Tiền nước và internet tháng 12",
+      "createdAt": "2024-12-05T09:00:00Z",
+      "updatedAt": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": "exp_010",
+      "date": "2024-12-05T16:00:00Z",
+      "amount": 700000,
+      "category": "cat_001",
+      "description": "Trà, matcha và nguyên liệu pha chế đặc biệt",
+      "createdAt": "2024-12-05T16:00:00Z",
+      "updatedAt": "2024-12-05T16:00:00Z"
+    },
+    {
+      "id": "exp_011",
+      "date": "2024-12-06T10:30:00Z",
+      "amount": 250000,
+      "category": "cat_005",
+      "description": "In flyer và poster quảng cáo",
+      "createdAt": "2024-12-06T10:30:00Z",
+      "updatedAt": "2024-12-06T10:30:00Z"
+    },
+    {
+      "id": "exp_012",
+      "date": "2024-12-07T08:15:00Z",
+      "amount": 1500000,
+      "category": "cat_004",
+      "description": "Lương nhân viên full-time tuần 1",
+      "createdAt": "2024-12-07T08:15:00Z",
+      "updatedAt": "2024-12-07T08:15:00Z"
+    },
+    {
+      "id": "exp_013",
+      "date": "2024-12-08T11:45:00Z",
+      "amount": 180000,
+      "category": "cat_008",
+      "description": "Mua đồ dọn dẹp và vệ sinh",
+      "createdAt": "2024-12-08T11:45:00Z",
+      "updatedAt": "2024-12-08T11:45:00Z"
+    },
+    {
+      "id": "exp_014",
+      "date": "2024-12-09T13:20:00Z",
+      "amount": 420000,
+      "category": "cat_001",
+      "description": "Siro, topping và kem tươi",
+      "createdAt": "2024-12-09T13:20:00Z",
+      "updatedAt": "2024-12-09T13:20:00Z"
+    },
+    {
+      "id": "exp_015",
+      "date": "2024-12-10T15:30:00Z",
+      "amount": 320000,
+      "category": "cat_003",
+      "description": "Phí bảo trì máy móc và thiết bị",
+      "createdAt": "2024-12-10T15:30:00Z",
+      "updatedAt": "2024-12-10T15:30:00Z"
+    },
+    {
+      "id": "exp_016",
+      "date": "2024-12-11T09:45:00Z",
+      "amount": 680000,
+      "category": "cat_001",
+      "description": "Cà phê hạt Robusta và Blend đặc biệt",
+      "createdAt": "2024-12-11T09:45:00Z",
+      "updatedAt": "2024-12-11T09:45:00Z"
+    },
+    {
+      "id": "exp_017",
+      "date": "2024-12-12T14:10:00Z",
+      "amount": 150000,
+      "category": "cat_005",
+      "description": "Tạo content social media",
+      "createdAt": "2024-12-12T14:10:00Z",
+      "updatedAt": "2024-12-12T14:10:00Z"
+    },
+    {
+      "id": "exp_018",
+      "date": "2024-12-13T16:25:00Z",
+      "amount": 280000,
+      "category": "cat_008",
+      "description": "Mua ly, ống hút và đồ dùng phục vụ",
+      "createdAt": "2024-12-13T16:25:00Z",
+      "updatedAt": "2024-12-13T16:25:00Z"
+    },
+    {
+      "id": "exp_019",
+      "date": "2024-12-14T11:00:00Z",
+      "amount": 1800000,
+      "category": "cat_004",
+      "description": "Lương nhân viên part-time tuần 2",
+      "createdAt": "2024-12-14T11:00:00Z",
+      "updatedAt": "2024-12-14T11:00:00Z"
+    },
+    {
+      "id": "exp_020",
+      "date": "2024-12-15T12:40:00Z",
+      "amount": 550000,
+      "category": "cat_001",
+      "description": "Bánh mì, sandwich và thức ăn nhẹ",
+      "createdAt": "2024-12-15T12:40:00Z",
+      "updatedAt": "2024-12-15T12:40:00Z"
+    }
+  ],
+  "summary": {
+    "totalAmount": 22080000,
+    "totalCount": 20,
+    "categoryBreakdown": {
+      "ingredients": 6250000,
+      "rent": 8000000,
+      "utilities": 1170000,
+      "salary": 4500000,
+      "marketing": 700000,
+      "other": 910000
+    },
+    "averageAmount": 1104000,
+    "period": "Tháng 12/2024"
+  }
+}

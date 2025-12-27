@@ -1,0 +1,192 @@
+{
+  "revenues": [
+    {
+      "id": "rev_001",
+      "date": "2024-12-01T08:30:00Z",
+      "amount": 850000,
+      "type": "sale",
+      "orderId": "ord_001"
+    },
+    {
+      "id": "rev_002",
+      "date": "2024-12-01T10:15:00Z",
+      "amount": 1200000,
+      "type": "sale",
+      "orderId": "ord_002"
+    },
+    {
+      "id": "rev_003",
+      "date": "2024-12-01T14:20:00Z",
+      "amount": 650000,
+      "type": "sale",
+      "orderId": "ord_003"
+    },
+    {
+      "id": "rev_004",
+      "date": "2024-12-02T09:45:00Z",
+      "amount": 950000,
+      "type": "sale",
+      "orderId": "ord_004"
+    },
+    {
+      "id": "rev_005",
+      "date": "2024-12-02T11:30:00Z",
+      "amount": 750000,
+      "type": "sale",
+      "orderId": "ord_005"
+    },
+    {
+      "id": "rev_006",
+      "date": "2024-12-02T16:10:00Z",
+      "amount": 1100000,
+      "type": "sale",
+      "orderId": "ord_006"
+    },
+    {
+      "id": "rev_007",
+      "date": "2024-12-03T08:00:00Z",
+      "amount": 800000,
+      "type": "sale",
+      "orderId": "ord_007"
+    },
+    {
+      "id": "rev_008",
+      "date": "2024-12-03T12:45:00Z",
+      "amount": 1350000,
+      "type": "sale",
+      "orderId": "ord_008"
+    },
+    {
+      "id": "rev_009",
+      "date": "2024-12-03T15:30:00Z",
+      "amount": 900000,
+      "type": "sale",
+      "orderId": "ord_009"
+    },
+    {
+      "id": "rev_010",
+      "date": "2024-12-04T10:20:00Z",
+      "amount": 1050000,
+      "type": "sale",
+      "orderId": "ord_010"
+    },
+    {
+      "id": "rev_011",
+      "date": "2024-12-04T13:15:00Z",
+      "amount": 700000,
+      "type": "sale",
+      "orderId": "ord_011"
+    },
+    {
+      "id": "rev_012",
+      "date": "2024-12-04T17:00:00Z",
+      "amount": 1250000,
+      "type": "sale",
+      "orderId": "ord_012"
+    },
+    {
+      "id": "rev_013",
+      "date": "2024-12-05T09:30:00Z",
+      "amount": 880000,
+      "type": "sale",
+      "orderId": "ord_013"
+    },
+    {
+      "id": "rev_014",
+      "date": "2024-12-05T14:45:00Z",
+      "amount": 1150000,
+      "type": "sale",
+      "orderId": "ord_014"
+    },
+    {
+      "id": "rev_015",
+      "date": "2024-12-05T18:20:00Z",
+      "amount": 950000,
+      "type": "sale",
+      "orderId": "ord_015"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp_001",
+      "date": "2024-12-01T07:00:00Z",
+      "amount": 2500000,
+      "category": "ingredients",
+      "description": "Mua cà phê hạt Arabica cao cấp"
+    },
+    {
+      "id": "exp_002",
+      "date": "2024-12-01T09:00:00Z",
+      "amount": 500000,
+      "category": "utilities",
+      "description": "Tiền điện tháng 12"
+    },
+    {
+      "id": "exp_003",
+      "date": "2024-12-02T08:30:00Z",
+      "amount": 800000,
+      "category": "ingredients",
+      "description": "Sữa tươi và đường"
+    },
+    {
+      "id": "exp_004",
+      "date": "2024-12-02T10:00:00Z",
+      "amount": 1200000,
+      "category": "salary",
+      "description": "Lương nhân viên part-time"
+    },
+    {
+      "id": "exp_005",
+      "date": "2024-12-03T07:30:00Z",
+      "amount": 300000,
+      "category": "marketing",
+      "description": "Quảng cáo Facebook"
+    },
+    {
+      "id": "exp_006",
+      "date": "2024-12-03T11:00:00Z",
+      "amount": 450000,
+      "category": "other",
+      "description": "Sửa chữa máy pha cà phê"
+    },
+    {
+      "id": "exp_007",
+      "date": "2024-12-04T08:00:00Z",
+      "amount": 600000,
+      "category": "ingredients",
+      "description": "Bánh ngọt và snack"
+    },
+    {
+      "id": "exp_008",
+      "date": "2024-12-04T14:00:00Z",
+      "amount": 8000000,
+      "category": "rent",
+      "description": "Tiền thuê mặt bằng tháng 12"
+    },
+    {
+      "id": "exp_009",
+      "date": "2024-12-05T09:00:00Z",
+      "amount": 350000,
+      "category": "utilities",
+      "description": "Tiền nước tháng 12"
+    },
+    {
+      "id": "exp_010",
+      "date": "2024-12-05T16:00:00Z",
+      "amount": 700000,
+      "category": "ingredients",
+      "description": "Trà và nguyên liệu pha chế"
+    }
+  ],
+  "summary": {
+    "totalRevenue": 14580000,
+    "totalExpense": 15400000,
+    "profit": -820000,
+    "orderCount": 15,
+    "period": "Tháng 12/2024"
+  },
+  "dateRange": {
+    "start": "2024-12-01T00:00:00Z",
+    "end": "2024-12-31T23:59:59Z"
+  }
+}

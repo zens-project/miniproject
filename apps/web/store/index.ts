@@ -7,6 +7,12 @@ import ordersReducer from './slices/orders.slice';
 import customersReducer from './slices/customers.slice';
 import expensesReducer from './slices/expenses.slice';
 import aiReducer from './slices/ai.slice';
+import aiAssistantReducer from './slices/ai-assistant.slice';
+import statisticsReducer from './slices/statistics.slice';
+import expenseManagementReducer from './slices/expense-management.slice';
+import expenseCategoriesReducer from './slices/expense-categories.slice';
+import productManagementReducer from './slices/product-management.slice';
+import salesManagementReducer from './slices/sales-management.slice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -15,6 +21,12 @@ const rootReducer = combineReducers({
   customers: customersReducer,
   expenses: expensesReducer,
   ai: aiReducer,
+  aiAssistant: aiAssistantReducer,
+  statistics: statisticsReducer,
+  expenseManagement: expenseManagementReducer,
+  expenseCategories: expenseCategoriesReducer,
+  productManagement: productManagementReducer,
+  salesManagement: salesManagementReducer,
 });
 
 const persistConfig = {

@@ -1,0 +1,289 @@
+{
+  "customers": [
+    {
+      "id": "cust_001",
+      "name": "Nguyễn Văn An",
+      "phone": "0901234567",
+      "email": "nguyenvanan@gmail.com",
+      "loyaltyPoints": 12,
+      "totalPurchases": 12,
+      "lastPurchaseDate": "2024-12-27T08:30:00Z",
+      "createdAt": "2024-12-01T00:00:00Z",
+      "updatedAt": "2024-12-27T08:30:00Z"
+    },
+    {
+      "id": "cust_002",
+      "name": "Trần Thị Bình",
+      "phone": "0912345678",
+      "email": "tranthibinh@gmail.com",
+      "loyaltyPoints": 8,
+      "totalPurchases": 8,
+      "lastPurchaseDate": "2024-12-27T10:00:00Z",
+      "createdAt": "2024-12-02T00:00:00Z",
+      "updatedAt": "2024-12-27T10:00:00Z"
+    },
+    {
+      "id": "cust_003",
+      "name": "Lê Hoàng Cường",
+      "phone": "0923456789",
+      "email": "lehoangcuong@gmail.com",
+      "loyaltyPoints": 5,
+      "totalPurchases": 5,
+      "lastPurchaseDate": "2024-12-27T11:00:00Z",
+      "createdAt": "2024-12-03T00:00:00Z",
+      "updatedAt": "2024-12-27T11:00:00Z"
+    },
+    {
+      "id": "cust_004",
+      "name": "Phạm Thị Dung",
+      "phone": "0934567890",
+      "email": "phamthidung@gmail.com",
+      "loyaltyPoints": 3,
+      "totalPurchases": 3,
+      "lastPurchaseDate": "2024-12-26T16:45:00Z",
+      "createdAt": "2024-12-04T00:00:00Z",
+      "updatedAt": "2024-12-26T16:45:00Z"
+    },
+    {
+      "id": "cust_005",
+      "name": "Hoàng Văn Em",
+      "phone": "0945678901",
+      "loyaltyPoints": 10,
+      "totalPurchases": 10,
+      "lastPurchaseDate": "2024-12-26T13:10:00Z",
+      "createdAt": "2024-12-05T00:00:00Z",
+      "updatedAt": "2024-12-26T13:10:00Z"
+    }
+  ],
+  "revenueEntries": [
+    {
+      "id": "rev_001",
+      "orderId": "ord_001",
+      "customerId": "cust_001",
+      "customerName": "Nguyễn Văn An",
+      "items": [
+        {
+          "productId": "prod_001",
+          "productName": "Espresso",
+          "quantity": 2,
+          "price": 35000,
+          "subtotal": 70000
+        },
+        {
+          "productId": "prod_009",
+          "productName": "Bánh Croissant",
+          "quantity": 1,
+          "price": 25000,
+          "subtotal": 25000
+        }
+      ],
+      "total": 95000,
+      "createdAt": "2024-12-27T08:30:00Z",
+      "updatedAt": "2024-12-27T08:30:00Z"
+    },
+    {
+      "id": "rev_002",
+      "orderId": "ord_002",
+      "customerId": "others",
+      "customerName": "Khách lẻ",
+      "items": [
+        {
+          "productId": "prod_003",
+          "productName": "Latte",
+          "quantity": 1,
+          "price": 50000,
+          "subtotal": 50000
+        }
+      ],
+      "total": 50000,
+      "createdAt": "2024-12-27T09:15:00Z",
+      "updatedAt": "2024-12-27T09:15:00Z"
+    },
+    {
+      "id": "rev_003",
+      "orderId": "ord_003",
+      "customerId": "cust_002",
+      "customerName": "Trần Thị Bình",
+      "items": [
+        {
+          "productId": "prod_002",
+          "productName": "Cappuccino",
+          "quantity": 1,
+          "price": 45000,
+          "subtotal": 45000
+        },
+        {
+          "productId": "prod_010",
+          "productName": "Bánh Tiramisu",
+          "quantity": 1,
+          "price": 65000,
+          "subtotal": 65000
+        }
+      ],
+      "total": 110000,
+      "createdAt": "2024-12-27T10:00:00Z",
+      "updatedAt": "2024-12-27T10:00:00Z"
+    },
+    {
+      "id": "rev_004",
+      "orderId": "ord_004",
+      "customerId": "others",
+      "customerName": "Khách lẻ",
+      "items": [
+        {
+          "productId": "prod_006",
+          "productName": "Trà Xanh",
+          "quantity": 2,
+          "price": 30000,
+          "subtotal": 60000
+        },
+        {
+          "productId": "prod_013",
+          "productName": "Sandwich Gà",
+          "quantity": 1,
+          "price": 45000,
+          "subtotal": 45000
+        }
+      ],
+      "total": 105000,
+      "createdAt": "2024-12-27T10:30:00Z",
+      "updatedAt": "2024-12-27T10:30:00Z"
+    },
+    {
+      "id": "rev_005",
+      "orderId": "ord_005",
+      "customerId": "cust_003",
+      "customerName": "Lê Hoàng Cường",
+      "items": [
+        {
+          "productId": "prod_005",
+          "productName": "Mocha",
+          "quantity": 1,
+          "price": 55000,
+          "subtotal": 55000
+        },
+        {
+          "productId": "prod_012",
+          "productName": "Muffin Chocolate",
+          "quantity": 2,
+          "price": 30000,
+          "subtotal": 60000
+        }
+      ],
+      "total": 115000,
+      "createdAt": "2024-12-27T11:00:00Z",
+      "updatedAt": "2024-12-27T11:00:00Z"
+    },
+    {
+      "id": "rev_006",
+      "orderId": "ord_006",
+      "customerId": "cust_004",
+      "customerName": "Phạm Thị Dung",
+      "items": [
+        {
+          "productId": "prod_008",
+          "productName": "Trà Sữa",
+          "quantity": 1,
+          "price": 40000,
+          "subtotal": 40000
+        },
+        {
+          "productId": "prod_015",
+          "productName": "Salad Trái Cây",
+          "quantity": 1,
+          "price": 40000,
+          "subtotal": 40000
+        }
+      ],
+      "total": 80000,
+      "createdAt": "2024-12-26T16:45:00Z",
+      "updatedAt": "2024-12-26T16:45:00Z"
+    },
+    {
+      "id": "rev_007",
+      "orderId": "ord_007",
+      "customerId": "others",
+      "customerName": "Khách lẻ",
+      "items": [
+        {
+          "productId": "prod_004",
+          "productName": "Americano",
+          "quantity": 3,
+          "price": 40000,
+          "subtotal": 120000
+        }
+      ],
+      "total": 120000,
+      "createdAt": "2024-12-26T14:20:00Z",
+      "updatedAt": "2024-12-26T14:20:00Z"
+    },
+    {
+      "id": "rev_008",
+      "orderId": "ord_008",
+      "customerId": "cust_005",
+      "customerName": "Hoàng Văn Em",
+      "items": [
+        {
+          "productId": "prod_007",
+          "productName": "Trà Đào",
+          "quantity": 2,
+          "price": 35000,
+          "subtotal": 70000
+        },
+        {
+          "productId": "prod_011",
+          "productName": "Cheesecake",
+          "quantity": 1,
+          "price": 55000,
+          "subtotal": 55000
+        }
+      ],
+      "total": 125000,
+      "createdAt": "2024-12-26T13:10:00Z",
+      "updatedAt": "2024-12-26T13:10:00Z"
+    },
+    {
+      "id": "rev_009",
+      "orderId": "ord_009",
+      "customerId": "others",
+      "customerName": "Khách lẻ",
+      "items": [
+        {
+          "productId": "prod_016",
+          "productName": "Nước Cam Tươi",
+          "quantity": 2,
+          "price": 25000,
+          "subtotal": 50000
+        },
+        {
+          "productId": "prod_014",
+          "productName": "Bánh Mì Thịt",
+          "quantity": 1,
+          "price": 35000,
+          "subtotal": 35000
+        }
+      ],
+      "total": 85000,
+      "createdAt": "2024-12-26T12:00:00Z",
+      "updatedAt": "2024-12-26T12:00:00Z"
+    },
+    {
+      "id": "rev_010",
+      "orderId": "ord_010",
+      "customerId": "cust_001",
+      "customerName": "Nguyễn Văn An",
+      "items": [
+        {
+          "productId": "prod_018",
+          "productName": "Nước Ép Dưa Hấu",
+          "quantity": 1,
+          "price": 30000,
+          "subtotal": 30000
+        }
+      ],
+      "total": 30000,
+      "createdAt": "2024-12-25T15:30:00Z",
+      "updatedAt": "2024-12-25T15:30:00Z"
+    }
+  ]
+}
