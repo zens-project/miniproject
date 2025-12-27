@@ -12,7 +12,7 @@ export interface Customer {
   createdAt: string;
 }
 
-interface CustomersState {
+export interface CustomersState {
   items: Customer[];
   isLoading: boolean;
   error: string | null;

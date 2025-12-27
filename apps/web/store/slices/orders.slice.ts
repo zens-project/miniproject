@@ -19,7 +19,7 @@ export interface Order {
   note?: string;
 }
 
-interface OrdersState {
+export interface OrdersState {
   items: Order[];
   currentOrder: OrderItem[];
   isLoading: boolean;

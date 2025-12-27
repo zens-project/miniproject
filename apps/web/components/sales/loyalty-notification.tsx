@@ -167,7 +167,7 @@ export default function LoyaltyNotificationComponent({
                             {notification.message}
                           </p>
                           <p className="text-xs text-white/50 mt-1">
-                            {formatTimeAgo(notification.createdAt)}
+                            {formatTimeAgo(new Date(notification.createdAt))}
                           </p>
                         </div>
 

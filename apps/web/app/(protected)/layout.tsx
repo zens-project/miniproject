@@ -18,6 +18,7 @@ const navigation = [
   { name: 'Quản lý Menu', href: '/products', icon: Package },
   { name: 'Bán hàng (POS)', href: '/sales', icon: ShoppingCart },
   { name: 'Khách hàng', href: '/customers', icon: Users },
+  { name: 'Thống kê', href: '/statistics', icon: TrendingUp },
   { name: 'Ghi chú', href: '/notes', icon: StickyNote },
   { name: 'Hồ sơ', href: '/profile', icon: User },
 ];
@@ -160,7 +161,7 @@ export default function ProtectedLayout({
 
         {/* Mobile bottom navigation */}
         <nav className="flex border-t border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 lg:hidden">
-          {navigation.slice(0, 5).map((item) => {
+          {navigation.slice(0, 6).map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link

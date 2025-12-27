@@ -11,10 +11,10 @@ export interface User {
   address?: string;
   joinedDate?: string;
   preferences?: {
-    theme: 'light' | 'dark' | 'coffee';
-    notifications: boolean;
-    emailUpdates: boolean;
-    language: 'vi' | 'en';
+    theme?: 'light' | 'dark' | 'coffee';
+    notifications?: boolean;
+    emailUpdates?: boolean;
+    language?: 'vi' | 'en';
   };
 }
 

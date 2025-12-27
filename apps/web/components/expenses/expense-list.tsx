@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { Edit, Trash2, Coffee, Building, Zap, Users, Megaphone, MoreHorizontal, Calendar, DollarSign } from 'lucide-react';
 import { Button } from '@workspace/ui';
 import { Expense, ExpenseCategory } from '@/lib/types/expenses';
+import React from 'react';
 
 interface ExpenseListProps {
   expenses: Expense[];
@@ -38,7 +39,7 @@ export default function ExpenseList({ expenses, isLoading, onEdit, onDelete }: E
     });
   };
 
-  const categoryConfig = {
+  const categoryConfig: Record<ExpenseCategory, { label: string; icon: React.ReactElement; color: string }> = {
     [ExpenseCategory.INGREDIENTS]: {
       label: 'Nguyên liệu',
       icon: <Coffee className="h-4 w-4" />,
@@ -69,6 +70,15 @@ export default function ExpenseList({ expenses, isLoading, onEdit, onDelete }: E
       icon: <MoreHorizontal className="h-4 w-4" />,
       color: 'bg-purple-500/20 text-purple-200 border-purple-400/30'
     }
+  };
+
+  const getCategoryConfig = (category: string) => {
+    const config = categoryConfig[category as ExpenseCategory];
+    return config || {
+      label: 'Không xác định',
+      icon: <MoreHorizontal className="h-4 w-4" />,
+      color: 'bg-gray-500/20 text-gray-200 border-gray-400/30'
+    };
   };
 
   const handleDelete = async (expense: Expense) => {
@@ -194,9 +204,9 @@ export default function ExpenseList({ expenses, isLoading, onEdit, onDelete }: E
                   </div>
                   
                   <div className="col-span-2">
-                    <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium border ${categoryConfig[expense.category].color}`}>
-                      {categoryConfig[expense.category].icon}
-                      {categoryConfig[expense.category].label}
+                    <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium border ${getCategoryConfig(expense.category).color}`}>
+                      {getCategoryConfig(expense.category).icon}
+                      {getCategoryConfig(expense.category).label}
                     </span>
                   </div>
                   
@@ -252,9 +262,9 @@ export default function ExpenseList({ expenses, isLoading, onEdit, onDelete }: E
             <div className="space-y-3">
               {/* Header */}
               <div className="flex items-center justify-between">
-                <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium border ${categoryConfig[expense.category].color}`}>
-                  {categoryConfig[expense.category].icon}
-                  {categoryConfig[expense.category].label}
+                <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium border ${getCategoryConfig(expense.category).color}`}>
+                  {getCategoryConfig(expense.category).icon}
+                  {getCategoryConfig(expense.category).label}
                 </span>
                 <div className="text-right">
                   <div className="text-white/60 text-sm">

@@ -49,12 +49,25 @@ export default function CustomersPage() {
   const [showLoyaltySettings, setShowLoyaltySettings] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  // Loyalty settings state
-  const [loyaltySettings, setLoyaltySettings] = useState<LoyaltySettingsType>({
-    rewardThreshold: 15,
-    emailEnabled: true,
-    emailTemplate: 'Chúc mừng bạn đã đủ {points} điểm! Bạn có thể đổi 1 ly miễn phí.',
-    rewardMessage: 'Khách hàng {name} đã đủ {points} điểm để nhận thưởng!'
+  // Loyalty settings state with localStorage persistence
+  const [loyaltySettings, setLoyaltySettings] = useState<LoyaltySettingsType>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('loyaltySettings');
+      if (saved) {
+        try {
+          return JSON.parse(saved);
+        } catch (error) {
+          console.error('Error parsing saved loyalty settings:', error);
+        }
+      }
+    }
+    return {
+      rewardThreshold: 15,
+      maxPoints: 1000,
+      emailEnabled: true,
+      emailTemplate: 'Chúc mừng bạn đã đủ {points} điểm! Bạn có thể đổi 1 ly miễn phí.',
+      rewardMessage: 'Khách hàng {name} đã đủ {points} điểm để nhận thưởng!'
+    };
   });
   
   // Dismissed alerts
@@ -226,6 +239,10 @@ export default function CustomersPage() {
 
   const handleSaveLoyaltySettings = (settings: LoyaltySettingsType) => {
     setLoyaltySettings(settings);
+    // Persist to localStorage
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('loyaltySettings', JSON.stringify(settings));
+    }
     toast.success('Cài đặt loyalty đã được lưu!');
   };
 

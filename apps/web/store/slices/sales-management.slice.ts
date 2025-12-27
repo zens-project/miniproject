@@ -407,7 +407,22 @@ const salesManagementSlice = createSlice({
         if (customerId && customerId !== 'others') {
           const customerIndex = state.customers.findIndex(c => c.id === customerId);
           if (customerIndex !== -1) {
-            state.customers[customerIndex].loyaltyPoints += LOYALTY_CONFIG.POINTS_PER_PURCHASE;
+            // Apply max limit from loyalty settings (default 1000 if not available)
+            const maxPoints = typeof window !== 'undefined' ? 
+              (() => {
+                try {
+                  const savedSettings = localStorage.getItem('loyaltySettings');
+                  return savedSettings ? JSON.parse(savedSettings).maxPoints || 1000 : 1000;
+                } catch {
+                  return 1000;
+                }
+              })() : 1000;
+            
+            const newPoints = Math.min(
+              state.customers[customerIndex].loyaltyPoints + LOYALTY_CONFIG.POINTS_PER_PURCHASE,
+              maxPoints
+            );
+            state.customers[customerIndex].loyaltyPoints = newPoints;
             state.customers[customerIndex].totalPurchases += 1;
             state.customers[customerIndex].lastPurchaseDate = new Date().toISOString();
             state.customers[customerIndex].updatedAt = new Date().toISOString();

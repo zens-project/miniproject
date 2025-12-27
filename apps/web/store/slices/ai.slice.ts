@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 import { aiService, type ChatMessage } from '@/lib/services/ai.service';
 
-interface AIState {
+export interface AIState {
   messages: ChatMessage[];
   isLoading: boolean;
   error: string | null;

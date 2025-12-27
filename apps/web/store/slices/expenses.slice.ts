@@ -10,7 +10,7 @@ export interface Expense {
   createdAt: string;
 }
 
-interface ExpensesState {
+export interface ExpensesState {
   items: Expense[];
   isLoading: boolean;
   error: string | null;

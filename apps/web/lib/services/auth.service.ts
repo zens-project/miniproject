@@ -1,7 +1,7 @@
 import { MockApiService } from './mock-api.service';
 import type { User } from '@/store/slices/auth.slice';
 
-interface AuthResponse {
+export interface AuthResponse {
   user: User;
   token: string;
 }

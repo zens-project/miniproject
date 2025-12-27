@@ -41,6 +41,7 @@ export interface Customer {
   name: string;
   phone: string;
   email?: string;
+  address?: string;
   loyaltyPoints: number;
   totalPurchases: number;
   lastPurchaseDate?: string; // ISO string for Redux serialization

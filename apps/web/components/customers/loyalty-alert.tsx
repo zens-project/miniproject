@@ -90,7 +90,7 @@ export default function LoyaltyAlert({
                   Đã đủ {customer.loyaltyPoints} điểm để nhận thưởng!
                 </p>
                 
-                <div className="flex gap-2">
+                {/* <div className="flex gap-2">
                   {customer.email && (
                     <Button
                       size="sm"
@@ -111,7 +111,7 @@ export default function LoyaltyAlert({
                       )}
                     </Button>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
             

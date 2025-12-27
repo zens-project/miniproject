@@ -14,6 +14,7 @@ interface LoyaltySettingsProps {
 
 export interface LoyaltySettings {
   rewardThreshold: number;
+  maxPoints: number;
   emailEnabled: boolean;
   emailTemplate: string;
   rewardMessage: string;
@@ -27,6 +28,7 @@ export default function LoyaltySettings({
 }: LoyaltySettingsProps) {
   const [settings, setSettings] = useState<LoyaltySettings>({
     rewardThreshold: 15,
+    maxPoints: 1000,
     emailEnabled: true,
     emailTemplate: 'Chúc mừng bạn đã đủ {points} điểm! Bạn có thể đổi 1 ly miễn phí.',
     rewardMessage: 'Khách hàng {name} đã đủ {points} điểm để nhận thưởng!'
@@ -47,8 +49,16 @@ export default function LoyaltySettings({
       newErrors.rewardThreshold = 'Ngưỡng điểm phải lớn hơn 0';
     }
 
-    if (settings.rewardThreshold > 1000) {
-      newErrors.rewardThreshold = 'Ngưỡng điểm không được vượt quá 1000';
+    if (settings.rewardThreshold > settings.maxPoints) {
+      newErrors.rewardThreshold = `Ngưỡng điểm không được vượt quá ${settings.maxPoints}`;
+    }
+
+    if (settings.maxPoints < 1) {
+      newErrors.maxPoints = 'Điểm tối đa phải lớn hơn 0';
+    }
+
+    if (settings.maxPoints > 10000) {
+      newErrors.maxPoints = 'Điểm tối đa không được vượt quá 10,000';
     }
 
     if (!settings.emailTemplate.trim()) {
@@ -125,7 +135,7 @@ export default function LoyaltySettings({
             <input
               type="number"
               min="1"
-              max="1000"
+              max={settings.maxPoints}
               value={settings.rewardThreshold}
               onChange={(e) => handleInputChange('rewardThreshold', parseInt(e.target.value) || 0)}
               className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-amber-400/50 backdrop-blur-sm ${
@@ -140,6 +150,33 @@ export default function LoyaltySettings({
             )}
             <p className="text-white/60 text-sm mt-1">
               Khách hàng sẽ nhận thưởng khi đạt đủ số điểm này
+            </p>
+          </div>
+
+          {/* Max Points */}
+          <div>
+            <label className="block text-sm font-medium text-white/80 mb-2">
+              <Gift className="h-4 w-4 inline mr-2" />
+              Điểm tối đa khách hàng có thể tích lũy
+            </label>
+            <input
+              type="number"
+              min="1"
+              max="10000"
+              value={settings.maxPoints}
+              onChange={(e) => handleInputChange('maxPoints', parseInt(e.target.value) || 0)}
+              className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-amber-400/50 backdrop-blur-sm ${
+                errors.maxPoints 
+                  ? 'border-red-400/50 focus:border-red-400/50' 
+                  : 'border-white/30 focus:border-amber-400/50'
+              }`}
+              placeholder="Nhập số điểm tối đa"
+            />
+            {errors.maxPoints && (
+              <p className="text-red-300 text-sm mt-1">{errors.maxPoints}</p>
+            )}
+            <p className="text-white/60 text-sm mt-1">
+              Giới hạn số điểm tối đa mà khách hàng có thể tích lũy
             </p>
           </div>
 

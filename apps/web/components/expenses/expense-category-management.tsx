@@ -212,7 +212,7 @@ export default function ExpenseCategoryManagement({ isOpen, onClose }: ExpenseCa
                       {/* Actions */}
                       <div className="flex items-center justify-between pt-2 border-t border-white/10">
                         <div className="text-xs text-white/60">
-                          {category.createdAt.toLocaleDateString('vi-VN')}
+                          {new Date(category.createdAt).toLocaleDateString('vi-VN')}
                         </div>
                         <div className="flex items-center gap-2">
                           <Button

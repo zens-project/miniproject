@@ -12,7 +12,7 @@ export interface Product {
   isAvailable: boolean;
 }
 
-interface ProductsState {
+export interface ProductsState {
   items: Product[];
   isLoading: boolean;
   error: string | null;

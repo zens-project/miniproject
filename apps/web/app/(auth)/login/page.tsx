@@ -164,7 +164,7 @@ export default function LoginPage() {
               <motion.div 
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="rounded-lg bg-red-500/20 border border-red-400/30 p-3 text-sm text-red-100"
+                className="rounded-lg bg-red-500/20 border border-red-400/30 p-3 text-sm text-neutral-900"
               >
                 {error}
               </motion.div>
