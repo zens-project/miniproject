@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@workspace/ui';
 import { motion } from 'motion/react';
+import { AIChat } from './components/ai-chat';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
@@ -144,6 +145,9 @@ export default function ProtectedLayout({
           })}
         </nav>
       </div>
+
+      {/* AI Chat Widget */}
+      <AIChat />
     </div>
   );
 }

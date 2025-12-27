@@ -6,6 +6,7 @@ import productsReducer from './slices/products.slice';
 import ordersReducer from './slices/orders.slice';
 import customersReducer from './slices/customers.slice';
 import expensesReducer from './slices/expenses.slice';
+import aiReducer from './slices/ai.slice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   orders: ordersReducer,
   customers: customersReducer,
   expenses: expensesReducer,
+  ai: aiReducer,
 });
 
 const persistConfig = {

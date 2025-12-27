@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@workspace/ui/styles/globals.css';
 import { Toaster } from '@workspace/ui';
 import { ReduxProvider } from '@/store/provider';
+import { InitApp } from './components/init-app';
 
 export const metadata: Metadata = {
   title: 'Coffee Shop Management',
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-white antialiased">
         <ReduxProvider>
+          <InitApp />
           {children}
           <Toaster />
         </ReduxProvider>
